@@ -1,11 +1,10 @@
 package jobs.dto;
 
 public class JobDto {
-
-	String name;
-	String type;
-	String company_name;
-	String date;
+	private String name;
+	private String type;
+	private String companyName;
+	private String date;
 	public String getDate() {
 		return date;
 	}
@@ -25,11 +24,9 @@ public class JobDto {
 		this.type = type;
 	}
 	public String getCompany_name() {
-		return company_name;
+		return companyName;
 	}
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
-	}
-	
-	
+	public void setCompany_name(String companyName) {
+		this.companyName = companyName;
+	}	
 }
