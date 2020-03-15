@@ -1,0 +1,49 @@
+button {
+	background-color: #f8f9f;
+	border: none;
+	color: #f8f9f;
+	padding: 15px 32px;
+	text-align: center;
+	font-size: 18px;
+	margin: 4px 2px;
+}
+
+select {
+	padding: 7px;
+	width: 255px;
+	font-size: 95%;
+	border: 2px solid:#d1d1d1;
+}
+
+input[type=text] {
+	padding: 7px;
+	width: 255px;
+	font-size: 110%;
+	border: 2px solid:#d1d1d1;
+}
+
+input[type=email] {
+	padding: 7px;
+	width: 255px;
+	font-size: 110%;
+	border: 2px solid:#d1d1d1;
+}
+
+input[type=number] {
+	padding: 7px;
+	width: 255px;
+	font-size: 110%;
+	border: 2px solid:#d1d1d1;
+}
+
+input[type=password] {
+	padding: 7px;
+	width: 255px;
+	font-size: 110%;
+	border: 2px solid:#d1d1d1;
+}
+
+.error {
+  color: red;
+  margin-left: 5px;
+}
