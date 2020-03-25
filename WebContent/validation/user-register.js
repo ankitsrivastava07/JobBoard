@@ -7,14 +7,21 @@ function validateform() {
 	var password = $("#password").val();// document.getElementById("password").value;
 	var emailFormat = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	var mobileFormat = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	var state = $("#state").val();
+	var location = $("#location").val();
 	var mobile = $("#mobile").val();
 	$(".error").remove();
 	var valid = true;
+
 	if (firstName == "") {
 		$('#firstName').after(
 				'<span class="error">Please enter first name</span>');
+		valid = false;
+	}
 
+	if (firstName.value.length <= 7) {
+		$('#firstName')
+				.after(
+						'<span class="error">First name atleast 7 character long</span>');
 		valid = false;
 	}
 
@@ -117,27 +124,51 @@ function doRegister() {
 		var password = $("#password").val();
 		var state = $("#state").val();
 		$.ajax({
-			url : "http://localhost:8585/JOBBoardPortal/create-user",
+			url : "http://localhost:8585/JobPortal/create-user",
 			type : "POST",
 			data : {
 				firstName : firstName,
-				lastName  : lastName,
-				mobile :    mobile,
-				email :     email,
-				password  : password,
-				state  :    state,
+				lastName : lastName,
+				mobile : mobile,
+				email : email,
+				password : password,
+				state : state,
 			},
 			dataType : "json",
 			success : function(data) {
 				console.log(data);
-				$("#success").html(data.email+" Successfully Completed");
+				$("#success").html(data.email + " Successfully Completed");
 			},
 			error : function(jqXHR, textStatus, errorThrown) {
 				console.log(jqXHR);
-				if(jqXHR.status==400)
-				$("#errors").html(jqXHR.responseJSON.message);
+				if (jqXHR.status == 400)
+					$("#errors").html(jqXHR.responseJSON.message);
 			}
 		});
-		return false;
+
 	}
+	return false;
+}
+function getStates(){
+	var country = $("#country").val();
+	$.ajax({
+		url : "http://localhost:8585/JobPortal/state-list",
+		type : "GET",
+		data : {country : country},
+		dataType : "json",
+		success : function(data) {
+			console.log(data);
+			var states = data;
+			var html = "<option value=''>Select State</option>";
+			for(var i=0;i<states.length;i++){
+				var name = states[i].name;
+				var id = states[i].id;
+				html +="<option value='"+id+"'>"+name+"</option>";
+			}
+			$("#state").html(html);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			
+		}
+	});
 }

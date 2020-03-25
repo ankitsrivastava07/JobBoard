@@ -11,15 +11,15 @@ public class UserValidatorService {
 	}
 	public void validateCreateUser(UserDto userDto) {
 		emailValidator.validate(userDto.getEmail());
-		userNameValidator.validate(userDto.getLastName());
+		//userNameValidator.validate(userDto.getLastName());
 	}
 	public void validateUpdateUser(UserDto userDto) {
 		emailValidator.validate(userDto.getEmail());
-		userNameValidator.validate(userDto.getLastName());
+		//userNameValidator.validate(userDto.getLastName());
 	}
 	
 	public void validateDeleteUser(UserDto userDto) {
 		emailValidator.validate(userDto.getEmail());
-		userNameValidator.validate(userDto.getLastName());
+		//userNameValidator.validate(userDto.getLastName());
 	}
 }

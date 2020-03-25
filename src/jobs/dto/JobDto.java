@@ -28,5 +28,7 @@ public class JobDto {
 	}
 	public void setCompany_name(String companyName) {
 		this.companyName = companyName;
-	}	
+	}
+	
+	
 }

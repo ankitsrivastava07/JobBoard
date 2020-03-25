@@ -1,12 +1,37 @@
 package users.dto;
 
+import users.entities.UserAddressEntity;
+
 public class UserDto {
+	
 	private int id;
 	private String email;
 	private String password;
 	private String firstName;
 	private String lastName;
+	private long mobile;
 	private String gender;
+	private UserAddressEntity userAddressEntity;
+	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public long getMobile() {
+		return mobile;
+	}
+	public void setMobile(long mobile) {
+		this.mobile = mobile;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	private String city;
 	
 	public String getEmail() {
 		return email;
@@ -18,7 +43,7 @@ public class UserDto {
 	public String getPassword() {
 		return password;
 	}
-
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -40,11 +65,12 @@ public class UserDto {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
 	
+	public void setUserAddressEntity(UserAddressEntity userAddressEntity) {
+		this.userAddressEntity=userAddressEntity;
+	
+	}
+	public UserAddressEntity getUserAddressEntity() {
+		return userAddressEntity;
+	}
 }

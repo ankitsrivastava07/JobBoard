@@ -16,7 +16,7 @@ import users.service.UserServiceImpl;
 @WebServlet("/login1")
 public class LoginServlet extends HttpServlet {
 	
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
+	    public void doPost(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 		response.setContentType("text/html");
 		String email = request.getParameter("email");
@@ -33,12 +33,12 @@ public class LoginServlet extends HttpServlet {
 			  session.setAttribute("email",email); 
 			  RequestDispatcher rd = request.getRequestDispatcher("users/welcome.jsp");
 			  rd.forward(request, response);
-
 		  } 
 		  else {
-			  response.getWriter().print("<h3>"+"Invalid Username Or Password"+"<h3>");
+			  
 		  RequestDispatcher rd = request.getRequestDispatcher("login.jsp");  
 		  rd.include(request, response);	  
+		  response.getWriter().print("<h3>"+"Invalid Username Or Password"+"<h3>");
 		  }
 	}
 	

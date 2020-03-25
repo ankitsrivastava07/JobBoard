@@ -7,20 +7,26 @@
 	<session-factory>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver
 		</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jobboard
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/jobboard
 		</property>
-		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.connection.username">
-			root
+		root
 		</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="hibernate.connection.password" />
 		<property name="hbmdl.auto">update</property>
 		<property name="show_sql">true</property>
-		
+		<!-- <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
 		 <property name="hibernate.c3p0.min_size">1</property>
-         <property name="hibernate.c3p0.max_size">1</property>
-        <mapping class="users.entities.UserEntity"></mapping>
+		 <property name="hibernate.c3p0.max_size">1</property>
+		 <property name="hibernate.c3p0.timeout">120</property>
+		 <property name="hibernate.c3p0.max_statements">10</property> -->
+		 
+		 <mapping class="users.entities.UserEntity"/>
+		 <mapping class="users.entities.UserAddressEntity"/> 
+		 <mapping class="users.entities.CountryEntity"/> 
+		 <mapping class="users.entities.StateEntity"/>
+		 
 	</session-factory>
-
 </hibernate-configuration>

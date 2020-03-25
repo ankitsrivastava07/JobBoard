@@ -7,7 +7,7 @@
 <title>Registration Successfully</title>
 </head>
 <body>
-	<center>
+<center>
 <h1><font color="green">Registration Successful</font></h1>
  <p><font color="green">your account created successfully.</font></p>
 <a href="/job-board/login">Goto SignIn</a>

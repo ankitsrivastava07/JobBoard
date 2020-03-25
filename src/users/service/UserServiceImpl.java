@@ -1,7 +1,10 @@
 package users.service;
 
+import java.util.List;
+
 import users.dao.UserDao;
 import users.dto.UserDto;
+import users.entities.CountryEntity;
 import users.service.validator.UserValidatorService;
 
 public class UserServiceImpl implements UserService {
@@ -18,7 +21,9 @@ public class UserServiceImpl implements UserService {
 
 	public boolean authenticate(UserDto userDto) {
 		return userDao.authenticate(userDto);
-
 	}
-
+	
+	public List<CountryEntity> getAllCountries(){
+		return userDao.getAllCountries();
+	}
 }
